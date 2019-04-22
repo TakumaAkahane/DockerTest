@@ -19,3 +19,7 @@ RUN cd /usr/local/lib/php/smarty \
 RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" \
  && php composer-setup.php --install-dir="/usr/local/bin" --filename="composer" \
  && php -r "unlink('composer-setup.php');"
+
+#apacheの設定変更
+RUN sed -i "s#/var/www/#/var/www/html/##" /etc/apache2/apache2.conf
+RUN sed -i "s#/var/www/html#/var/www/html/public##" /etc/apache2/sites-available/000-default.conf 
