@@ -26,7 +26,7 @@ class AlbumController extends AbstractActionController
     public function addAction()
     {
         $form = new AlbumForm();
-        $form->get('submit')->setValue('Add');
+        $form->get('submit')->setValue('add');
 
         $request = $this->getRequest();
 
@@ -43,6 +43,7 @@ class AlbumController extends AbstractActionController
         }
 
         $album->exchangeArray($form->getData());
+        $tmp = $album->id;
         $this->table->saveAlbum($album);
         return $this->redirect()->toRoute('album');
     }

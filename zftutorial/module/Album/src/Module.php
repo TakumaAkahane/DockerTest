@@ -30,6 +30,7 @@ class Module implements ConfigProviderInterface
             ],
         ];
     }
+
     public function getControllerConfig()
     {
         return [

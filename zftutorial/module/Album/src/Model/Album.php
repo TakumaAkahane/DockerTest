@@ -10,12 +10,11 @@ use Zend\InputFilter\InputFilterAwareInterface;
 use Zend\InputFilter\InputFilterInterface;
 use Zend\Validator\StringLength;
 
-class Album
+class Album implements InputFilterAwareInterface
 {
     public $id;
     public $artist;
     public $title;
-
     private $inputFilter;
 
     public function exchangeArray(array $data)
@@ -23,6 +22,15 @@ class Album
         $this->id     = !empty($data['id']) ? $data['id'] : null;
         $this->artist = !empty($data['artist']) ? $data['artist'] : null;
         $this->title  = !empty($data['title']) ? $data['title'] : null;
+    }
+
+    public function getArrayCopy()
+    {
+        return [
+            'id'     => $this->id,
+            'artist' => $this->artist,
+            'title'  => $this->title,
+        ];
     }
 
     public function setInputFilter(InputFilterInterface $inputFilter)
@@ -89,14 +97,5 @@ class Album
 
         $this->inputFilter = $inputFilter;
         return $this->inputFilter;
-    }
-
-    public function getArrayCopy()
-    {
-        return [
-            'id'     => $this->id,
-            'artist' => $this->artist,
-            'title'  => $this->title,
-        ];
     }
 }

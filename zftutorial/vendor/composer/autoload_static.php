@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInite6c654884437bab38b2f587a8dd28bce
+class ComposerStaticInit9c239cb70f6accb3f349773707bb0e0f
 {
     public static $files = array (
         '34901568a1e26d13dd475cb2c85e0284' => __DIR__ . '/..' . '/zendframework/zend-form/autoload/formElementManagerPolyfill.php',
@@ -22,6 +22,7 @@ class ComposerStaticInite6c654884437bab38b2f587a8dd28bce
             'Zend\\Mvc\\' => 9,
             'Zend\\ModuleManager\\' => 19,
             'Zend\\Loader\\' => 12,
+            'Zend\\Json\\' => 10,
             'Zend\\InputFilter\\' => 17,
             'Zend\\I18n\\' => 10,
             'Zend\\Hydrator\\' => 14,
@@ -88,6 +89,10 @@ class ComposerStaticInite6c654884437bab38b2f587a8dd28bce
         'Zend\\Loader\\' => 
         array (
             0 => __DIR__ . '/..' . '/zendframework/zend-loader/src',
+        ),
+        'Zend\\Json\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/zendframework/zend-json/src',
         ),
         'Zend\\InputFilter\\' => 
         array (
@@ -166,8 +171,8 @@ class ComposerStaticInite6c654884437bab38b2f587a8dd28bce
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInite6c654884437bab38b2f587a8dd28bce::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInite6c654884437bab38b2f587a8dd28bce::$prefixDirsPsr4;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit9c239cb70f6accb3f349773707bb0e0f::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit9c239cb70f6accb3f349773707bb0e0f::$prefixDirsPsr4;
 
         }, null, ClassLoader::class);
     }

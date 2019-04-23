@@ -20,6 +20,7 @@ return [
                 'options' => [
                     'route'    => '/',
                     'defaults' => [
+                        // 'controller' => Controller\IndexController::class,
                         'controller' => AlbumController::class,
                         'action'     => 'index',
                     ],
